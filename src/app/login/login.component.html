@@ -1,0 +1,41 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+
+                <h4 class="card-title mb-4 mt-1">Sign in</h4>
+                <div [hidden]='IsLoggined'  style="background-color:red;color:white"> Invalid Username and Password </div>
+                <form name="form" (ngSubmit)="f.valid && onSubmit()" #f="ngForm">                
+                    <div class="form-group">
+                        <label>User name</label>
+                        <input type="text" class="form-control" name="userName" [(ngModel)]="model.userName" #userName="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && userName.invalid }" required>                      
+                        <div *ngIf="f.submitted && userName.invalid" class="invalid-feedback">
+                            <div *ngIf="userName.errors.required">User Name is required</div>
+                        </div>
+                    </div> <!-- form-group// -->
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input [(ngModel)]="model.password" #password="ngModel" name="password"
+                            [ngClass]="{'is-invalid': f.submitted && password.invalid}" required class="form-control"
+                            type="password">
+                        <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                            <div *ngIf="password.errors.required">Password is required</div>
+                        </div>
+                    </div> <!-- form-group// -->
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <a class="float-right" routerLink="/forgotpassword"
+                                routerLinkActive="router-link-active">Forgot?</a>
+                            <a class="float-left" routerLink="/userregistration"
+                                routerLinkActive="router-link-active">Register</a>
+                        </div> <!-- checkbox .// -->
+                    </div> <!-- form-group// -->
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Login </button>
+                    </div> <!-- form-group// -->
+                </form>
+
+            </div>
+        </div>
+    </div>

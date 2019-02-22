@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="basicExampleNav" style="background-color:red">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"  style="color: white">
+          Welcome, {{name}}
+      </li>
+      <li class="nav-item">
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login" routerLinkActive="router-link-active" style="color: white">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="./about" routerLinkActive="router-link-active" style="color: white">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="./contact" routerLinkActive="router-link-active"  style="color: white">Contact Us</a>
+      </li>
+      <li class="nav-item" align="right">
+        <button (click)="onLogout()" >Logout</button>
+      </li>
+    </ul>   
+  </div>
+</nav> 
+
+<router-outlet></router-outlet>
